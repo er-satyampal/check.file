@@ -44,7 +44,7 @@ while($row=$main->fetch()){
     <td>'.$row->topic_id.'</td>
     <td>'.$row->datetime. '</td>
     <td>'.$row->topic_name.'</td>
-    <td><a href="('.$row->preview_link.')">Open</a></td>
+    <td><a href="'.$row->preview_link.'">Open</a></td>
     <td>
         <a href="'.$del.'" target="_blank">Delete</a>
         /
