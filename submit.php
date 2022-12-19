@@ -4,12 +4,11 @@
  $topic = $_GET["topic"];
  $preview_link = $_GET["preview_link"];
 
-
 require_once("db/connection.php");
 
-$main = $connection-> prepare("INSERT INTO `officework`( datetime, topic_name, preview_link) VALUE ( :db_datetime, :db_topic_name, :db_preview_link)")  ;
+$main = $connection->prepare("INSERT INTO `officework`( datetime, topic_name, preview_link) VALUE ( :db_date, :db_topic, :db_preview_link)")  ;
 
-$main->bindParam(':db_datetime', $date);
+$main->bindParam(':db_date', $date);
 $main->bindParam(':db_topic_name', $topic);
 $main->bindParam(':db_preview_link',$preview_link);
 
