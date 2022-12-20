@@ -9,10 +9,11 @@ if(!ISSET($_REQUEST["uid"])){
 }else{
   require_once(__DIR__."/db/connection.php");
  
-  $main = $connection->prepare("SELECT * FROM `officework` WHERE `topic_id` = '{$_REQUEST["uid"]}' LIMIT 1");
+  $main = $connection->prepare("SELECT * FROM `students` WHERE `id` = '{$_REQUEST["uid"]}' LIMIT 1");
   $main->setFetchMode(PDO:: FETCH_OBJ);
   $main->execute();
-  $main_data = $main->fetch();
+  $main_data = $sth->fetch();
+
 }
 
 ?>

@@ -4,11 +4,12 @@
  $topic = $_GET["topic"];
  $preview_link = $_GET["preview_link"];
 
+
 require_once("db/connection.php");
 
-$main = $connection->prepare("INSERT INTO `officework`( datetime, topic_name, preview_link) VALUE ( :db_date, :db_topic, :db_preview_link)")  ;
+$main = $connection-> prepare("INSERT INTO `officework`( datetime, topic_name, preview_link) VALUE ( :db_datetime, :db_topic_name, :db_preview_link)")  ;
 
-$main->bindParam(':db_date', $date);
+$main->bindParam(':db_datetime', $date);
 $main->bindParam(':db_topic_name', $topic);
 $main->bindParam(':db_preview_link',$preview_link);
 
@@ -19,7 +20,28 @@ if($main->execute()){
         echo "Something Went Wrong! ";
     }
 
-// // INSERT INTO `officework` 
-// (`topic_id`, `datetime`, `topic_name`, `preview_link`, `b`) 
-// VALUES 
-// ('1', '2022-12-18 11:59:36.000000', 'tp_name', 'pl', '0')
+?>
+
+<br/>
+<br/>
+<br/>
+
+<!-- HTML Started From Here  -->
+
+<html>
+    <head>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <button>
+            <a href="http://localhost/check.file/index-1.html">Add Again</a>
+        </button>
+<br/>
+        <button>
+            <a href="http://localhost//check.file/viewdata_base_table.php">Go to All data List</a>
+        </button>
+    </body>
+</html>
+<!-- HTML Ending at Here  -->

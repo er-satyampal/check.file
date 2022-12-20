@@ -36,7 +36,7 @@ $main->execute();
 while($row=$main->fetch()){
 
     $del = 'http://localhost/check.file/delete.php?uid='.$row->topic_id;
-    $edit = 'http://localhost/check.file/update.php?='.$row->topic_id;
+    $edit = 'http://localhost/check.file/update-stu_data.php?='.$row->topic_id;
 
 
     echo '
