@@ -7,7 +7,7 @@
 
 require_once("db/connection.php");
 
-$main = $connection->prepare("INSERT INTO `officework`( datetime, topic_name, preview_link) VALUE ( :db_datetime, :db_topic_name, :db_preview_link)")  ;
+$main = $connection->prepare("INSERT INTO `officework`( datetime, topic_name, preview_link) VALUE ( :db_datetime, :db_topic_name, :db_preview_link)");
 
 $main->bindParam(':db_datetime', $datetime);
 $main->bindParam(':db_topic_name', $topic_name);
