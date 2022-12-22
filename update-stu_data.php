@@ -9,12 +9,11 @@ if(!ISSET($_REQUEST["uid"])){
 }else{
   require_once(__DIR__."/db/connection.php");
  
-  $main = $connection->prepare("SELECT * FROM `students` WHERE `id` = '{$_REQUEST["uid"]}' LIMIT 1");
+  $main = $connection->prepare("SELECT * FROM `officework` WHERE `topic_id` = '{$_REQUEST["uid"]}' LIMIT 1");
   $main->setFetchMode(PDO:: FETCH_OBJ);
   $main->execute();
-  $main_data = $sth->fetch();
-
-}
+  $main_data = $main->fetch();
+} 
 
 ?>
 
@@ -40,7 +39,7 @@ text-align: center;
 
   <div class="main-div">
         <h2>Inter Your Daily Data</h2>
-        <form action="submit.php" method="GET">
+        <form action="update.php" method="GET">
             &nbsp;<br/>
             &nbsp;<br/>
     <label for="Date"> Worke-Date </label>
@@ -54,10 +53,12 @@ text-align: center;
              &nbsp;<br/>
              &nbsp;<br/>
              &nbsp;<br/>
-             &nbsp;<br/>
-             &nbsp;<br/>
-    <label for="Preview_link">Preview Link</label>
-             <input type="text" placeholder="File Preview Link" name="preview_link" value="<?= $main_data->previev_links ?>">
+
+             <label for="Preview link">Preview_link</label>
+             <input type="text" placeholder="Preview_link" name="Preview_link" value="<?= $main_data->preview_link ?>">
+
+    <!-- <label for="Preview_link">Preview Link</label>
+             <input type="text" name="preview_link" value="<?=// $main_data->previev_links ?>"> -->
              &nbsp;<br/>
              &nbsp;<br/>
              <input type="submit" value="Submit">
