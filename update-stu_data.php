@@ -55,10 +55,8 @@ text-align: center;
              &nbsp;<br/>
 
              <label for="Preview link">Preview_link</label>
-             <input type="text" placeholder="Preview_link" name="Preview_link" value="<?= $main_data->preview_link ?>">
+             <input type="text" placeholder="Preview_link" name="preview_link" value="<?= $main_data->preview_link ?>">
 
-    <!-- <label for="Preview_link">Preview Link</label>
-             <input type="text" name="preview_link" value="<?=// $main_data->previev_links ?>"> -->
              &nbsp;<br/>
              &nbsp;<br/>
              <input type="submit" value="Submit">
