@@ -14,5 +14,4 @@ echo "Your Record has Deleted Succesfully";
 }catch(PDOException $ex_msg){
 	echo "Error: ". $ex_msg->getMessage();
 }
-
 ?>
